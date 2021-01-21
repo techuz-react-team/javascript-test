@@ -39,6 +39,17 @@ test('test undo', () => {
   expect(sourcer.value).toEqual(6);
 });
 
+test('test redo', () => {
+  let sourcer = new EventSourcer();
+
+  sourcer.add(2);
+  sourcer.add(2);
+  sourcer.add(2);
+  sourcer.add(2);
+  sourcer.undo();
+
+  expect(sourcer.value).toEqual(6);
+});
 
 test('test redo', () => {
   let sourcer = new EventSourcer();
