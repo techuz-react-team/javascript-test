@@ -1,5 +1,15 @@
 const EventSourcer = require('../solution_javascript');
 
+
+test('test addition', () => {
+  let sourcer = new EventSourcer();
+
+  // sourcer.add(2);
+  // sourcer.add(5);
+
+  expect(sourcer.addition(2,5)).toEqual(7);
+});
+
 test('test add', () => {
   let sourcer = new EventSourcer();
 
@@ -26,21 +36,9 @@ test('test undo', () => {
   sourcer.add(2);
   sourcer.add(2);
   sourcer.undo();
-
   expect(sourcer.value).toEqual(6);
 });
 
-test('test redo', () => {
-  let sourcer = new EventSourcer();
-
-  sourcer.add(2);
-  sourcer.add(2);
-  sourcer.add(2);
-  sourcer.add(2);
-  sourcer.undo();
-
-  expect(sourcer.value).toEqual(6);
-});
 
 test('test redo', () => {
   let sourcer = new EventSourcer();
