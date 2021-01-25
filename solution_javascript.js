@@ -28,9 +28,6 @@ class EventSourcer {
 
   bulk_undo(number) {
     this.value = 0;
-    // this.undoArray.map(number => {
-    //   this.undoArray.pop();
-    // });
     for (let i = 0; i < number; i++) {
       this.AllAction.pop();
     }
